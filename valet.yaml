@@ -1,0 +1,33 @@
+name: bug-triager
+display_name: Bug Triager
+description: >-
+  Classifies Sentry alerts by severity, reviews source code for
+  context, and opens or updates Linear tickets with a diagnosis
+category: development
+connectors:
+  - catalog: sentry
+    description: >-
+      Sentry MCP server for retrieving issue details, stack traces,
+      and event metadata
+    slot_descriptions:
+      SENTRY_ACCESS_TOKEN: Sentry internal integration token
+  - catalog: linear
+    description: >-
+      Linear MCP server for creating and updating tickets with
+      triage results and diagnosis
+    slot_descriptions:
+      LINEAR_API_TOKEN: "Linear personal API key (lin_api_...)"
+  - catalog: github
+    description: >-
+      GitHub MCP server for reading source code referenced in
+      stack traces
+    slot_descriptions:
+      GITHUB_PERSONAL_ACCESS_TOKEN: "GitHub PAT with repo read scope (github_pat_...)"
+channels:
+  - catalog: sentry-webhook
+    description: Receives Sentry issue and event alert webhooks
+    events:
+      - issue
+      - event_alert
+    slot_descriptions:
+      SENTRY_CLIENT_SECRET: Sentry internal integration client secret
