@@ -5,19 +5,19 @@ description: >-
   context, and opens or updates Linear tickets with a diagnosis
 category: development
 connectors:
-  - catalog: sentry
+  - catalog: sentry-mcp
     description: >-
       Sentry MCP server for retrieving issue details, stack traces,
       and event metadata
     slot_descriptions:
       SENTRY_ACCESS_TOKEN: Sentry internal integration token
-  - catalog: linear
+  - catalog: linear-mcp
     description: >-
       Linear MCP server for creating and updating tickets with
       triage results and diagnosis
     slot_descriptions:
       LINEAR_API_TOKEN: "Linear personal API key (lin_api_...)"
-  - catalog: github
+  - catalog: github-mcp
     description: >-
       GitHub MCP server for reading source code referenced in
       stack traces
