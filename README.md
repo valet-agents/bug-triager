@@ -19,7 +19,7 @@ A [Valet](https://valet.dev) agent that triages Sentry alerts. Classifies each a
   <tr>
     <td colspan="2" align="center">
       <br />
-      <a href="https://dashboard.valet.dev/setup/configure?from=github.com/valet-agents/bug-triager">
+      <a href="https://dashboard.valet.dev/deploy?from=github.com/valet-agents/bug-triager">
         <img src="https://raw.githubusercontent.com/valet-agents/bug-triager/main/.github/deploy-button.svg" alt="Deploy Agent →" height="40" />
       </a>
       <br /><br />
