@@ -4,6 +4,35 @@ description: >-
   Classifies Sentry alerts by severity, reviews source code for
   context, and opens or updates Linear tickets with a diagnosis
 category: development
+example:
+  prompt: "Anything urgent in the new bug reports today?"
+
+story:
+  hero: "An automatic first responder on every Sentry alert."
+  subheadline: >-
+    When a Sentry issue fires, Bug Triager classifies the severity,
+    reads the offending code, and files or updates a Linear ticket
+    with a diagnosis — before the on-call sees the page.
+  steps:
+    - role: trigger
+      title: "Sentry fires on a new error."
+      body: >-
+        A new event lands in Sentry — stack trace, fingerprint, and
+        recent event count.
+      catalog: sentry-webhook
+    - role: action
+      title: "Bug Triager classifies and reads the code."
+      body: >-
+        Pulls the stack trace, opens the offending file on GitHub for
+        context, and decides severity.
+      catalog: github-mcp
+    - role: outcome
+      title: "A Linear ticket appears with a diagnosis."
+      body: >-
+        Files a new ticket or updates an existing one with severity,
+        suspected cause, and a link back to the Sentry event.
+      catalog: linear-mcp
+
 connectors:
   - catalog: sentry-mcp
     description: >-
